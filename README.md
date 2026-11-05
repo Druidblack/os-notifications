@@ -27,6 +27,19 @@ System resource alerts depend on existing health checks, such as those configure
 | Dynamic DNS	| A DNS record is updated or the provider rejects an update. |
 | Firewall block summaries	| At least ten blocked packets are logged in five minutes. |
 
+**Installation**
+
+```
+fetch -o - https://github.com/Druidblack/os-notifications/archive/refs/heads/master.tar.gz | tar -xzf - -C /tmp
+sh /tmp/os-notifications-main/install.sh
+```
+
+**Remove**
+
+```
+sh uninstall.sh
+```
+
 
 **Examples of notifications**
 
