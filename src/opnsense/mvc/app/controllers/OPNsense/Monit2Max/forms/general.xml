@@ -1,0 +1,14 @@
+<form>
+    <field>
+        <id>monit2max.general.Enabled</id>
+        <label>Enable notifications</label>
+        <type>checkbox</type>
+        <help>Monitor selected OPNsense events and deliver them to the enabled messaging services. This setting does not change how system services operate.</help>
+    </field>
+    <field>
+        <id>monit2max.general.Title</id>
+        <label>Notification title</label>
+        <type>text</type>
+        <help>Text displayed at the start of notifications sent to MAX and Telegram and in the message body sent to Gotify.</help>
+    </field>
+</form>

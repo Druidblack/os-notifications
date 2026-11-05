@@ -1,0 +1,10 @@
+<acl>
+    <page-services-monit2max>
+        <name>Services: Notifications</name>
+        <description>Configure OPNsense event notifications for MAX, Telegram and Gotify</description>
+        <patterns>
+            <pattern>ui/monit2max/*</pattern>
+            <pattern>api/monit2max/*</pattern>
+        </patterns>
+    </page-services-monit2max>
+</acl>

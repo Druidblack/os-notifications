@@ -1,0 +1,5 @@
+<menu>
+    <Services>
+        <SystemNotifications VisibleName="Notifications" order="98" cssClass="fa fa-bell-o fa-fw" url="/ui/monit2max"/>
+    </Services>
+</menu>

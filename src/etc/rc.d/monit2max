@@ -1,0 +1,13 @@
+#!/bin/sh
+# PROVIDE: monit2max
+# REQUIRE: LOGIN syslogd
+# KEYWORD: shutdown
+. /etc/rc.subr
+name="monit2max"
+rcvar="monit2max_enable"
+command="/usr/sbin/daemon"
+pidfile="/var/run/monit2max.pid"
+command_args="-r -P ${pidfile} -o /var/log/monit2max-watcher.log /usr/local/bin/python3 -u /usr/local/opnsense/scripts/OPNsense/Monit2Max/watcher.py --watch"
+load_rc_config "$name"
+: ${monit2max_enable:="NO"}
+run_rc_command "$1"

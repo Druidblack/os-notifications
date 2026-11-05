@@ -1,0 +1,14 @@
+<form>
+    <field>
+        <id>monit2max.general.CpuTempEnabled</id>
+        <label>CPU temperature alerts</label>
+        <type>checkbox</type>
+        <help>Check CPU core temperatures and notify if the hottest core exceeds the configured limit twice in succession. Once cooled, a recovery message is sent. Requires the CPU thermal sensors to be available in OPNsense.</help>
+    </field>
+    <field>
+        <id>monit2max.general.CpuTempThreshold</id>
+        <label>CPU temperature limit</label>
+        <type>text</type>
+        <help>Alert when CPU temperature exceeds this limit. Allowed range: 40–105 °C; default: 75 °C. The CPU is considered cool again once its hottest core stays at least 5 °C below the limit for two readings. The system checks about every 20 seconds.</help>
+    </field>
+</form>

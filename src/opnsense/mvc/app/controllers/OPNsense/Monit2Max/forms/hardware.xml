@@ -1,0 +1,20 @@
+<form>
+    <field>
+        <id>monit2max.general.SmartEnabled</id>
+        <label>Disk health and wear alerts</label>
+        <type>checkbox</type>
+        <help>Read SMART/NVMe status from installed smartctl and report failing disks, high wear and overheating. Requires smartmontools.</help>
+    </field>
+    <field>
+        <id>monit2max.general.SmartWearLimit</id>
+        <label>SSD lifetime used limit</label>
+        <type>text</type>
+        <help>Alert when NVMe reported lifetime used reaches this percentage. Default 90%.</help>
+    </field>
+    <field>
+        <id>monit2max.general.SmartTempLimit</id>
+        <label>Drive temperature limit</label>
+        <type>text</type>
+        <help>Alert if an available SMART temperature reaches this limit in °C. Default 65 °C.</help>
+    </field>
+</form>

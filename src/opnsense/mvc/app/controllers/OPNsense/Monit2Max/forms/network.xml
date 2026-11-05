@@ -1,0 +1,38 @@
+<form>
+    <field>
+        <id>monit2max.general.NotifyGatewayStatus</id>
+        <label>Gateway connection status</label>
+        <type>checkbox</type>
+        <help>Track each monitored WAN gateway independently, including backup connections. Notify after an offline or recovered state is confirmed. Recovery messages include outage duration and available connection statistics.</help>
+    </field>
+    <field>
+        <id>monit2max.general.NotifyGatewayQuality</id>
+        <label>Gateway latency and packet loss</label>
+        <type>checkbox</type>
+        <help>Notify when monitored WAN gateways develop excessive latency or packet loss, and when quality returns to normal. Uses the current OPNsense gateway status with log fallback.</help>
+    </field>
+    <field>
+        <id>monit2max.general.NotifyWanIP</id>
+        <label>WAN IP address changes</label>
+        <type>checkbox</type>
+        <help>Notify when the WAN connection logs a change of public IP address. Some connection types do not record this event.</help>
+    </field>
+    <field>
+        <id>monit2max.general.NotifyVpn</id>
+        <label>VPN connection status</label>
+        <type>checkbox</type>
+        <help>Notify when a supported VPN service logs a disconnection, reconnection or connection error. Available events depend on the VPN service.</help>
+    </field>
+    <field>
+        <id>monit2max.general.AliasEnabled</id>
+        <label>Firewall Alias update alerts</label>
+        <type>checkbox</type>
+        <help>Read configured URL Table aliases and their local downloaded lists. Warn if a list is missing, empty or older than the maximum age. No lists are updated by this plugin.</help>
+    </field>
+    <field>
+        <id>monit2max.general.AliasAgeHours</id>
+        <label>Firewall Alias maximum age</label>
+        <type>text</type>
+        <help>Largest allowed age of downloaded URL Table lists, in hours. Set above the scheduled refresh interval. Default 48 hours.</help>
+    </field>
+</form>

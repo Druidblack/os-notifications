@@ -1,0 +1,26 @@
+<form>
+    <field>
+        <id>monit2max.general.TelegramEnabled</id>
+        <label>Enable Telegram</label>
+        <type>checkbox</type>
+        <help>Send selected system notifications to Telegram independently of MAX and Gotify.</help>
+    </field>
+    <field>
+        <id>monit2max.general.TelegramToken</id>
+        <label>Bot token</label>
+        <type>password</type>
+        <help>Create a Telegram bot using @BotFather and enter its token. Do not share this token.</help>
+    </field>
+    <field>
+        <id>monit2max.general.TelegramChatId</id>
+        <label>Chat ID</label>
+        <type>text</type>
+        <help>Enter a numeric personal/group chat ID or the public channel username. The bot must have permission to send to that destination.</help>
+    </field>
+    <field>
+        <id>monit2max.general.TelegramThreadId</id>
+        <label>Forum topic ID</label>
+        <type>text</type>
+        <help>Enter the topic ID when sending to a specific topic in a Telegram forum group. Leave empty for other chats.</help>
+    </field>
+</form>

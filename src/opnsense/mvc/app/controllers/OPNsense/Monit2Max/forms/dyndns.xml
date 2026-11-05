@@ -1,0 +1,14 @@
+<form>
+    <field>
+        <id>monit2max.general.NotifyDdnsChanges</id>
+        <label>Dynamic DNS updates</label>
+        <type>checkbox</type>
+        <help>Notify when Dynamic DNS changes a DNS record or public IP. Unchanged scheduled checks do not generate notifications.</help>
+    </field>
+    <field>
+        <id>monit2max.general.NotifyDdnsErrors</id>
+        <label>Dynamic DNS errors</label>
+        <type>checkbox</type>
+        <help>Notify when Dynamic DNS cannot detect an IP address, authenticate with a provider or update a DNS record.</help>
+    </field>
+</form>

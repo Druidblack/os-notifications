@@ -1,0 +1,56 @@
+<form>
+    <field>
+        <id>monit2max.general.NotifyDns</id>
+        <label>DNS service errors</label>
+        <type>checkbox</type>
+        <help>Notify when Unbound or Dnsmasq logs a startup error, a binding problem or an upstream DNS failure.</help>
+    </field>
+    <field>
+        <id>monit2max.general.NotifyDhcp</id>
+        <label>DHCP service errors</label>
+        <type>checkbox</type>
+        <help>Notify when the DHCP server reports an address-allocation failure, an address conflict or an exhausted pool.</help>
+    </field>
+    <field>
+        <id>monit2max.general.NotifyDhcpLeases</id>
+        <label>New DHCP devices</label>
+        <type>checkbox</type>
+        <help>Notify when a device receives a lease for the first time within the retained event history. Lease logging is required; routine renewals are ignored.</help>
+    </field>
+    <field>
+        <id>monit2max.general.NotifyFirmware</id>
+        <label>Firmware and package updates</label>
+        <type>checkbox</type>
+        <help>Notify when the system logs a firmware or package update result, including failures.</help>
+    </field>
+    <field>
+        <id>monit2max.general.NotifyBackup</id>
+        <label>Backup errors</label>
+        <type>checkbox</type>
+        <help>Notify when a supported configuration-backup task records a failure.</help>
+    </field>
+    <field>
+        <id>monit2max.general.NotifyBackend</id>
+        <label>Backend and service errors</label>
+        <type>checkbox</type>
+        <help>Notify when an OPNsense backend task fails. The affected executable and error code are included when available; sensitive command arguments are omitted.</help>
+    </field>
+    <field>
+        <id>monit2max.general.BackupFreshnessEnabled</id>
+        <label>Local backup freshness alerts</label>
+        <type>checkbox</type>
+        <help>Check the newest configuration snapshot in a chosen local folder. This does not prove successful upload to Git, Google Drive or other remote services.</help>
+    </field>
+    <field>
+        <id>monit2max.general.BackupAgeDays</id>
+        <label>Maximum backup age</label>
+        <type>text</type>
+        <help>Alert when the newest local backup snapshot is older than this many days. Default 2.</help>
+    </field>
+    <field>
+        <id>monit2max.general.BackupDirectory</id>
+        <label>Local backup folder</label>
+        <type>text</type>
+        <help>Directory containing local backup snapshot files (XML, compressed XML, backup). Default /conf/backup. Remote backup success is monitored separately from service logs.</help>
+    </field>
+</form>

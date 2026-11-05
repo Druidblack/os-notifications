@@ -1,0 +1,118 @@
+<model>
+    <mount>//OPNsense/monit2max</mount>
+    <description>OPNsense notifications to MAX, Telegram and Gotify</description>
+    <version>0.6.9</version>
+    <items>
+        <general>
+            <Enabled type="BooleanField">
+                <Default>0</Default>
+                <Required>Y</Required>
+            </Enabled>
+            <MaxEnabled type="BooleanField"><Default>1</Default><Required>Y</Required></MaxEnabled>
+            <Provider type="OptionField">
+                <Required>Y</Required>
+                <Default>official</Default>
+                <OptionValues>
+                    <official>Official MAX API</official>
+                    <a161>notify.a161.ru</a161>
+                </OptionValues>
+            </Provider>
+            <Token type="TextField">
+                <Required>N</Required>
+                <Mask>/^[A-Za-z0-9_.~:\-]*$/</Mask>
+                <ValidationMessage>Enter a valid MAX bot token.</ValidationMessage>
+            </Token>
+            <RecipientType type="OptionField">
+                <Required>Y</Required>
+                <Default>user</Default>
+                <OptionValues>
+                    <user>Personal chat (user ID)</user>
+                    <chat>Group or channel (chat ID)</chat>
+                </OptionValues>
+            </RecipientType>
+            <RecipientId type="TextField">
+                <Required>N</Required>
+                <Mask>/^-?[0-9]{0,19}$/</Mask>
+                <ValidationMessage>Use a numeric recipient ID.</ValidationMessage>
+            </RecipientId>
+            <TelegramEnabled type="BooleanField"><Default>0</Default><Required>Y</Required></TelegramEnabled>
+            <TelegramToken type="TextField">
+                <Required>N</Required>
+                <Mask>/^[0-9A-Za-z:_\-]*$/</Mask>
+                <ValidationMessage>Enter the token provided by BotFather.</ValidationMessage>
+            </TelegramToken>
+            <TelegramChatId type="TextField">
+                <Required>N</Required>
+                <Mask>/^(-?[0-9]{0,20}|@[A-Za-z0-9_]{0,32})$/</Mask>
+                <ValidationMessage>Enter a numeric chat ID or public channel @username.</ValidationMessage>
+            </TelegramChatId>
+            <TelegramThreadId type="TextField">
+                <Required>N</Required>
+                <Mask>/^[0-9]{0,19}$/</Mask>
+                <ValidationMessage>Enter a positive topic ID, or leave it empty.</ValidationMessage>
+            </TelegramThreadId>
+            <GotifyEnabled type="BooleanField"><Default>0</Default><Required>Y</Required></GotifyEnabled>
+            <GotifyServerUrl type="TextField">
+                <Required>N</Required>
+                <Mask>~^https?://[^\s?#@]+/?$~</Mask>
+                <ValidationMessage>Enter the Gotify server URL (http:// or https://, without credentials or query parameters).</ValidationMessage>
+            </GotifyServerUrl>
+            <GotifyToken type="TextField">
+                <Required>N</Required>
+                <Mask>/^[A-Za-z0-9_.~:\-]*$/</Mask>
+                <ValidationMessage>Enter the Gotify application token.</ValidationMessage>
+            </GotifyToken>
+            <GotifyPriority type="IntegerField">
+                <Default>5</Default><Required>Y</Required>
+                <MinimumValue>0</MinimumValue><MaximumValue>10</MaximumValue>
+            </GotifyPriority>
+            <IncludeOriginalLog type="BooleanField"><Default>0</Default><Required>Y</Required></IncludeOriginalLog>
+            <NotifyFailures type="BooleanField"><Default>1</Default><Required>Y</Required></NotifyFailures>
+            <NotifyRecoveries type="BooleanField"><Default>1</Default><Required>Y</Required></NotifyRecoveries>
+            <NotifyActions type="BooleanField"><Default>1</Default><Required>Y</Required></NotifyActions>
+            <NotifyOther type="BooleanField"><Default>0</Default><Required>Y</Required></NotifyOther>
+            <NotifyStartup type="BooleanField"><Default>1</Default><Required>Y</Required></NotifyStartup>
+            <NotifyShutdown type="BooleanField"><Default>1</Default><Required>Y</Required></NotifyShutdown>
+            <CpuTempEnabled type="BooleanField"><Default>0</Default><Required>Y</Required></CpuTempEnabled>
+            <CpuTempThreshold type="IntegerField">
+                <Default>75</Default><Required>Y</Required>
+                <MinimumValue>40</MinimumValue><MaximumValue>105</MaximumValue>
+            </CpuTempThreshold>
+            <NotifyGatewayStatus type="BooleanField"><Default>1</Default><Required>Y</Required></NotifyGatewayStatus>
+            <NotifyGatewayQuality type="BooleanField"><Default>1</Default><Required>Y</Required></NotifyGatewayQuality>
+            <NotifyWanIP type="BooleanField"><Default>0</Default><Required>Y</Required></NotifyWanIP>
+            <NotifyAuth type="BooleanField"><Default>1</Default><Required>Y</Required></NotifyAuth>
+            <NotifyCrowdSec type="BooleanField"><Default>1</Default><Required>Y</Required></NotifyCrowdSec>
+            <NotifyVpn type="BooleanField"><Default>1</Default><Required>Y</Required></NotifyVpn>
+            <NotifyDns type="BooleanField"><Default>1</Default><Required>Y</Required></NotifyDns>
+            <NotifyDhcp type="BooleanField"><Default>1</Default><Required>Y</Required></NotifyDhcp>
+            <NotifyDhcpLeases type="BooleanField"><Default>0</Default><Required>Y</Required></NotifyDhcpLeases>
+            <NotifyDdnsChanges type="BooleanField"><Default>1</Default><Required>Y</Required></NotifyDdnsChanges>
+            <NotifyDdnsErrors type="BooleanField"><Default>1</Default><Required>Y</Required></NotifyDdnsErrors>
+            <NotifyFirmware type="BooleanField"><Default>1</Default><Required>Y</Required></NotifyFirmware>
+            <NotifyBackup type="BooleanField"><Default>1</Default><Required>Y</Required></NotifyBackup>
+            <NotifyBackend type="BooleanField"><Default>1</Default><Required>Y</Required></NotifyBackend>
+            <NotifyFirewall type="BooleanField"><Default>0</Default><Required>Y</Required></NotifyFirewall>
+            <NotifyIds type="BooleanField"><Default>0</Default><Required>Y</Required></NotifyIds>
+            <SmartEnabled type="BooleanField"><Default>0</Default><Required>Y</Required></SmartEnabled>
+            <SmartWearLimit type="IntegerField"><Default>90</Default><Required>Y</Required><MinimumValue>1</MinimumValue><MaximumValue>100</MaximumValue></SmartWearLimit>
+            <SmartTempLimit type="IntegerField"><Default>65</Default><Required>Y</Required><MinimumValue>40</MinimumValue><MaximumValue>100</MaximumValue></SmartTempLimit>
+            <ResourcesEnabled type="BooleanField"><Default>0</Default><Required>Y</Required></ResourcesEnabled>
+            <SwapLimit type="IntegerField"><Default>80</Default><Required>Y</Required><MinimumValue>1</MinimumValue><MaximumValue>100</MaximumValue></SwapLimit>
+            <PfLimit type="IntegerField"><Default>80</Default><Required>Y</Required><MinimumValue>1</MinimumValue><MaximumValue>100</MaximumValue></PfLimit>
+            <MbufLimit type="IntegerField"><Default>80</Default><Required>Y</Required><MinimumValue>1</MinimumValue><MaximumValue>100</MaximumValue></MbufLimit>
+            <AliasEnabled type="BooleanField"><Default>0</Default><Required>Y</Required></AliasEnabled>
+            <AliasAgeHours type="IntegerField"><Default>48</Default><Required>Y</Required><MinimumValue>1</MinimumValue><MaximumValue>720</MaximumValue></AliasAgeHours>
+            <CertEnabled type="BooleanField"><Default>0</Default><Required>Y</Required></CertEnabled>
+            <CertAll type="BooleanField"><Default>0</Default><Required>Y</Required></CertAll>
+            <BackupFreshnessEnabled type="BooleanField"><Default>0</Default><Required>Y</Required></BackupFreshnessEnabled>
+            <BackupAgeDays type="IntegerField"><Default>2</Default><Required>Y</Required><MinimumValue>1</MinimumValue><MaximumValue>365</MaximumValue></BackupAgeDays>
+            <BackupDirectory type="TextField"><Default>/conf/backup</Default><Required>Y</Required><Mask>~^/[A-Za-z0-9._/-]{0,219}$~</Mask></BackupDirectory>
+            <Title type="TextField">
+                <Default>OPNsense Notifications</Default>
+                <Required>N</Required>
+                <Mask>/^[^\r\n]{0,80}$/</Mask>
+            </Title>
+        </general>
+    </items>
+</model>

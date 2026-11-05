@@ -1,0 +1,38 @@
+<form>
+    <field>
+        <id>monit2max.general.NotifyAuth</id>
+        <label>Administrator and SSH logins</label>
+        <type>checkbox</type>
+        <help>Notify about successful and unsuccessful administrator logins reported by the web interface or SSH service. Passwords are not included.</help>
+    </field>
+    <field>
+        <id>monit2max.general.NotifyCrowdSec</id>
+        <label>CrowdSec security and errors</label>
+        <type>checkbox</type>
+        <help>Notify when CrowdSec logs a blocking decision or a processing or service error. Security decisions and service faults are identified separately.</help>
+    </field>
+    <field>
+        <id>monit2max.general.NotifyFirewall</id>
+        <label>Firewall block summaries</label>
+        <type>checkbox</type>
+        <help>Group logged firewall blocks into a summary when at least ten blocked packets are recorded within five minutes. Individual packets are not sent.</help>
+    </field>
+    <field>
+        <id>monit2max.general.NotifyIds</id>
+        <label>IDS/IPS security alerts</label>
+        <type>checkbox</type>
+        <help>Notify about high-severity Suricata alerts written to its EVE JSON log. Requires IDS/IPS logging.</help>
+    </field>
+    <field>
+        <id>monit2max.general.CertEnabled</id>
+        <label>Certificate expiry alerts</label>
+        <type>checkbox</type>
+        <help>Check the certificate used by the OPNsense web interface. Warn at 30, 7, 1 and 0 days remaining. Does not transmit certificates or keys.</help>
+    </field>
+    <field>
+        <id>monit2max.general.CertAll</id>
+        <label>Check other stored certificates</label>
+        <type>checkbox</type>
+        <help>Also check all locally stored certificates, including inactive ones. Some old or unused certificates may intentionally be expired.</help>
+    </field>
+</form>

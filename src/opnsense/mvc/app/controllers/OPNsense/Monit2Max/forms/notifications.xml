@@ -1,0 +1,68 @@
+<form>
+    <field>
+        <id>monit2max.general.IncludeOriginalLog</id>
+        <label>Include original log entry</label>
+        <type>checkbox</type>
+        <help>Add the journal entry that triggered an alert after the explanation. Recognized passwords, tokens, command arguments and URLs are masked, but some sensitive data may remain. Use only with trusted recipients. Startup and shutdown events do not have a source log entry.</help>
+    </field>
+    <field>
+        <id>monit2max.general.NotifyFailures</id>
+        <label>System health problems</label>
+        <type>checkbox</type>
+        <help>Send alerts when existing health checks report problems, such as high CPU or memory use, a full disk, or an unavailable monitored service. These checks must already be configured and produce journal events.</help>
+    </field>
+    <field>
+        <id>monit2max.general.NotifyRecoveries</id>
+        <label>System health recovered</label>
+        <type>checkbox</type>
+        <help>Notify when a previously detected problem clears, such as CPU use returning to normal or a monitored service recovering. Requires a logged recovery event.</help>
+    </field>
+    <field>
+        <id>monit2max.general.NotifyActions</id>
+        <label>Monitored service actions</label>
+        <type>checkbox</type>
+        <help>Notify when a monitoring service logs starting, stopping or restarting a monitored process. This does not restart services itself.</help>
+    </field>
+    <field>
+        <id>monit2max.general.NotifyOther</id>
+        <label>Other check changes</label>
+        <type>checkbox</type>
+        <help>Receive additional status changes from monitoring checks that are not classified as a problem, recovery or service action.</help>
+    </field>
+    <field>
+        <id>monit2max.general.NotifyStartup</id>
+        <label>System started</label>
+        <type>checkbox</type>
+        <help>Notify after OPNsense finishes booting. If the network is unavailable, delivery is retried.</help>
+    </field>
+    <field>
+        <id>monit2max.general.NotifyShutdown</id>
+        <label>System shutdown and restart</label>
+        <type>checkbox</type>
+        <help>Notify when OPNsense shuts down or restarts. The plugin identifies normal GUI reboot and power-off actions from their system process, with system logs as a fallback. If the reason is unavailable, the notification says that the system is stopping without guessing. Delivery requires network access.</help>
+    </field>
+    <field>
+        <id>monit2max.general.ResourcesEnabled</id>
+        <label>Swap and firewall resource alerts</label>
+        <type>checkbox</type>
+        <help>Check swap utilization, Firewall state table and available mbuf cluster limits every minute. Missing metrics are skipped, never treated as recovery.</help>
+    </field>
+    <field>
+        <id>monit2max.general.SwapLimit</id>
+        <label>Swap usage limit</label>
+        <type>text</type>
+        <help>Warning level for utilized swap space as a percentage. Default 80%.</help>
+    </field>
+    <field>
+        <id>monit2max.general.PfLimit</id>
+        <label>Firewall state table usage limit</label>
+        <type>text</type>
+        <help>Warn when the Firewall state table approaches its configured maximum. Default 80%.</help>
+    </field>
+    <field>
+        <id>monit2max.general.MbufLimit</id>
+        <label>Mbuf usage limit</label>
+        <type>text</type>
+        <help>Warn when reported mbuf cluster allocation reaches the configured percentage of its maximum. Default 80%.</help>
+    </field>
+</form>

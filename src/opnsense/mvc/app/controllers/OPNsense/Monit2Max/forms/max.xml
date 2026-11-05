@@ -1,0 +1,32 @@
+<form>
+    <field>
+        <id>monit2max.general.MaxEnabled</id>
+        <label>Enable MAX</label>
+        <type>checkbox</type>
+        <help>Send selected system notifications to MAX independently of Telegram and Gotify.</help>
+    </field>
+    <field>
+        <id>monit2max.general.Provider</id>
+        <label>MAX provider</label>
+        <type>dropdown</type>
+        <help>Choose the official MAX Bot API or notify.a161.ru. Use the token provided by the selected service.</help>
+    </field>
+    <field>
+        <id>monit2max.general.Token</id>
+        <label>MAX access token</label>
+        <type>password</type>
+        <help>Enter the access token issued by the selected MAX service. It is stored in the OPNsense configuration and hidden in the settings form.</help>
+    </field>
+    <field>
+        <id>monit2max.general.RecipientType</id>
+        <label>Recipient type</label>
+        <type>dropdown</type>
+        <help>Choose personal chat for a user ID, or group/channel for a chat ID. notify.a161.ru uses negative IDs for groups and channels.</help>
+    </field>
+    <field>
+        <id>monit2max.general.RecipientId</id>
+        <label>Recipient ID</label>
+        <type>text</type>
+        <help>Enter the user or chat ID accepted by the selected provider.</help>
+    </field>
+</form>

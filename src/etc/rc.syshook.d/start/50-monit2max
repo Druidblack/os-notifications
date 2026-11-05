@@ -1,0 +1,7 @@
+#!/bin/sh
+# Queue boot event after the network-start stage; worker retries delivery.
+[ -f /usr/local/etc/monit2max/settings.conf ] || exit 0
+/usr/bin/grep -q '^Enabled=1$' /usr/local/etc/monit2max/settings.conf || exit 0
+/usr/local/bin/python3 /usr/local/opnsense/scripts/OPNsense/Monit2Max/watcher.py --startup >/dev/null 2>&1 || true
+/usr/local/etc/rc.d/monit2max onestart >/dev/null 2>&1 || true
+exit 0

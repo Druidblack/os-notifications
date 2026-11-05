@@ -1,0 +1,26 @@
+<form>
+    <field>
+        <id>monit2max.general.GotifyEnabled</id>
+        <label>Enable Gotify</label>
+        <type>checkbox</type>
+        <help>Send selected system notifications to your Gotify server independently of MAX and Telegram.</help>
+    </field>
+    <field>
+        <id>monit2max.general.GotifyServerUrl</id>
+        <label>Server URL</label>
+        <type>text</type>
+        <help>Enter the Gotify server address, including any reverse-proxy path. HTTPS is recommended. Do not add /message to the address.</help>
+    </field>
+    <field>
+        <id>monit2max.general.GotifyToken</id>
+        <label>Application token</label>
+        <type>password</type>
+        <help>Use a token from a Gotify application, not a client token. For an HTTP server, the token travels without transport encryption.</help>
+    </field>
+    <field>
+        <id>monit2max.general.GotifyPriority</id>
+        <label>Notification priority</label>
+        <type>text</type>
+        <help>Choose a value from 0 to 10. Higher values mean higher priority; the default is 5.</help>
+    </field>
+</form>
